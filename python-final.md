@@ -35,7 +35,7 @@ Bir veri kümesinde bağımsız değişken (X) ve bağımlı değişken (Y) değ
 
 #### Cevap:
 
-```
+```Python
 import numpy as np
 
 # Veriler
@@ -72,7 +72,7 @@ Kullanıcıdan alt ve üst sınır alarak, bu aralıkta rastgele elemanlardan ol
 
 #### Cevap:
 
-```
+```Python
 import numpy as np
 
 # Kullanıcıdan alt ve üst sınır al
@@ -110,7 +110,7 @@ ___
 
 #### Cevap:
 
-```
+```Python
 import pandas as pd
 import numpy as np
 
