@@ -3,6 +3,7 @@ KAYÜ Yazılım Mühendisliği - Python Programlama dersinde işlenen kodlar
 
 PyCharm'ın içerisindeki venv'i kullanarak kodlarımızı yazıyoruz.
 
-## Vize Soruları ve Cevapları
+## SınavSoruları ve Cevapları
 Vize soruları ve cevaplarını içeren dosyaya [bu bağlantıdan](https://github.com/furkandlkdr/yms-301/blob/main/python-vize.md) ulaşabilirsiniz.
+
 Final soruları ve cevaplarını içeren dosyaya [bu bağlantıdan](https://github.com/furkandlkdr/yms-301/blob/main/python-final.md) ulaşabilirsiniz.
