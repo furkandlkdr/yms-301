@@ -31,9 +31,25 @@ ___
 
 #### Soru:
 
-Bir veri kümesinde bağımsız değişken (X) ve bağımlı değişken (Y) değerleri verilmiştir. X = \[1, 2, 3, 4, 5\], Y = \[2, 4, 5, 4, 5\]. Bu verileri kullanarak bir lineer regresyon modeli oluşturun ve tahmin edilen Y değerlerini yazdırın.
+Bir veri kümesinde bağımsız değişken ve bağımlı değişken değerleri verilmiştir. Bu verileri kullanarak bir lineer regresyon modeli oluşturun ve tahmin edilen Y değerlerini yazdırın.
 
 #### Cevap:
+
+```Python
+from statistics import *
+
+yil = [2021, 2022, 2023, 2024]
+satis = [1000, 1500, 1752, 1900]
+
+b, a = linear_regression(yil, satis)
+y = a + b * 2025
+
+print(a)
+print(b)
+print("2025 tahmini: ", y)
+```
+
+#### Alternatif (Muhtemelen Yanlış) Cevap:
 
 ```Python
 import numpy as np
