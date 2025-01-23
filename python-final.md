@@ -31,7 +31,7 @@ ___
 
 #### Soru:
 
-Bir veri kümesinde bağımsız değişken ve bağımlı değişken değerleri verilmiştir. Bu verileri kullanarak bir lineer regresyon modeli oluşturun ve tahmin edilen Y değerlerini yazdırın.
+2021, 2022, 2023 ve 2024 yıllarına ait satış verileri verilmiştir. Bu verileri kullanarak bir lineer regresyon modeli oluşturun ve 2025 yılı için tahmin edilen satış değerini yazdırın.
 
 #### Cevap:
 
@@ -47,35 +47,6 @@ y = a + b * 2025
 print(a)
 print(b)
 print("2025 tahmini: ", y)
-```
-
-#### Alternatif (Muhtemelen Yanlış) Cevap:
-
-```Python
-import numpy as np
-
-# Veriler
-X = np.array([1, 2, 3, 4, 5])
-Y = np.array([2, 4, 5, 4, 5])
-
-# Ortalama hesaplama
-mean_X = np.mean(X)
-mean_Y = np.mean(Y)
-
-# Eğim (b) hesaplama
-b = np.sum((X - mean_X) * (Y - mean_Y)) / np.sum((X - mean_X) ** 2)
-
-# Kesim noktası (a) hesaplama
-a = mean_Y - b * mean_X
-
-# Tahmin edilen Y değerleri
-predicted_Y = a + b * X
-
-print("Orijinal Y değerleri:", Y)
-print("Tahmin edilen Y değerleri:", predicted_Y)
-print("Eğim (b):", b)
-print("Kesişim noktası (a):", a)
-
 ```
 
 ___
@@ -95,7 +66,7 @@ import numpy as np
 alt_sinir = int(input("Alt sınır: "))
 ust_sinir = int(input("Üst sınır: "))
 
-# Rastgele liste oluştur ve matrise çevir
+# Rastgele liste oluştur ve matrise çevir. NP ile oluşturulduğundan vektör olarak alınır. Tekrar dönüştürme gerektirmez
 liste = np.random.randint(alt_sinir, ust_sinir + 1, 9)
 matris = liste.reshape(3, 3)
 
@@ -128,19 +99,30 @@ ___
 
 ```Python
 import pandas as pd
-import numpy as np
 
 # Dosyayı oku
 df = pd.read_csv("Bilgi.csv")
 
 # 'incidence rate' sütununu al ve 'GorOr' ismiyle yeniden adlandır
-df['GorOr'] = df['incidence rate']
+df.rename(columns={'incidence rate':'GorOr'},inplace=True)
 
 # İlk 20 veriyi al
 data = df['GorOr'].head(20)
 
-# Standart sapmayı hesapla
-std_dev = np.std(data)
+# Ortalama hesapla
+mean = 0
+for value in data:
+    mean += value
+mean /= len(data)
+
+# Varyans hesapla
+variance = 0
+for value in data:
+    variance += (value - mean) ** 2
+variance /= len(data)
+
+# Standart sapma hesapla
+std_dev = variance ** 0.5
 
 print("İlk 20 verinin standart sapması:", std_dev)
 
