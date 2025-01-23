@@ -66,24 +66,25 @@ import numpy as np
 alt_sinir = int(input("Alt sınır: "))
 ust_sinir = int(input("Üst sınır: "))
 
-# Rastgele liste oluştur ve matrise çevir. NP ile oluşturulduğundan vektör olarak alınır. Tekrar dönüştürme gerektirmez
+# Rastgele matris oluştur
 liste = np.random.randint(alt_sinir, ust_sinir + 1, 9)
-matris = liste.reshape(3, 3)
+matris = liste.reshape(3,3)
 
-# Listeyi en küçükten en büyüğe sıralama (manuel)
-for i in range(len(liste)):
-    for j in range(i + 1, len(liste)):
-        if liste[i] > liste[j]:
-            liste[i], liste[j] = liste[j], liste[i]
-
-# Sıralanmış listeyi matrise çevirme
-matris_siralanmis = liste.reshape(3, 3)
-
-print("Orijinal 3x3 Matris:")
 print(matris)
-print("Sıralanmış 3x3 Matris:")
-print(matris_siralanmis)
 
+# Matris içinde manuel sıralama
+for i in range(3):
+    for j in range(3):
+        for k in range(i, 3):
+            start_l = 0
+            if k == i:
+                start_l = j
+            for l in range(start_l, 3):
+                if matris[i][j] > matris[k][l]:
+                    matris[i][j], matris[k][l] = matris[k][l], matris[i][j]
+
+print("Sıralanmış 3x3 Matris:")
+print(matris)
 
 ```
 
@@ -123,6 +124,8 @@ variance /= len(data)
 
 # Standart sapma hesapla
 std_dev = variance ** 0.5
+
+# alternatif: std_dev = stdev(data) #statics kütüphanesinden
 
 print("İlk 20 verinin standart sapması:", std_dev)
 
