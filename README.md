@@ -1,9 +1,9 @@
-# yms-301
-KAYÜ Yazılım Mühendisliği - Python Programlama dersinde işlenen kodlar
+# yms-301  
+KAYÜ Software Engineering - Python Programming Course Code Repository  
 
-PyCharm'ın içerisindeki venv'i kullanarak kodlarımızı yazıyoruz.
+We write our code using the virtual environment (venv) in PyCharm.  
 
-## Sınav Soruları ve Cevapları
-Vize soruları ve cevaplarını içeren dosyaya [bu bağlantıdan](https://github.com/furkandlkdr/yms-301/blob/main/python-vize.md) ulaşabilirsiniz.
+## Exam Questions and Answers  
+You can access the file containing the midterm questions and answers [here](https://github.com/furkandlkdr/yms-301/blob/main/python-vize.md).  
 
-Final soruları ve cevaplarını içeren dosyaya [bu bağlantıdan](https://github.com/furkandlkdr/yms-301/blob/main/python-final.md) ulaşabilirsiniz.
+You can access the file containing the final exam questions and answers [here](https://github.com/furkandlkdr/yms-301/blob/main/python-final.md).  
